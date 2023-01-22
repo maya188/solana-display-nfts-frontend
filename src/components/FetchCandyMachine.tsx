@@ -6,7 +6,7 @@ import styles from "../styles/custom.module.css"
 
 export const FetchCandyMachine: FC = () => {
 	// placeholder CMv2 address
-  const [candyMachineAddress, setCandyMachineAddress] = useState("GNfbQEfMA1u1irEFnThTcrzDyefJsoa7sndACShaS5vC")
+  const [candyMachineAddress, setCandyMachineAddress] = useState("")
   const [candyMachineData, setCandyMachineData] = useState(null)
   const [pageItems, setPageItems] = useState(null)
   const [page, setPage] = useState(1)
