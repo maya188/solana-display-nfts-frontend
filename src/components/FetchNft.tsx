@@ -11,6 +11,7 @@ export const FetchNft: FC = () => {
   const wallet = useWallet()
   const metaplex = Metaplex.make(connection).use(walletAdapterIdentity(wallet))
 
+  // fetch nfts
 
   const fetchNfts = async () => {
   if (!wallet.connected) {
@@ -21,6 +22,7 @@ export const FetchNft: FC = () => {
   const nfts = await metaplex
     .nfts()
     .findAllByOwner({ owner: wallet.publicKey })
+    .run()
 
   // fetch off chain metadata for each NFT
   let nftData = []
@@ -32,7 +34,6 @@ export const FetchNft: FC = () => {
 
   // set state
   setNftData(nftData)
-  
   
 }
 
